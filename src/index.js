@@ -1,6 +1,6 @@
+import "./style.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./style.css";
 import BusinessCard from "./Components/BusinessCard";
 
 ReactDOM.render(

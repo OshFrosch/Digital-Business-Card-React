@@ -4,7 +4,7 @@ import Links from "./Links";
 
 function BusinessCard() {
   return (
-    <div>
+    <div className="business-card">
       <ProfilePicture />
       <Profile />
       <Links />

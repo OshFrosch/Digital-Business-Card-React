@@ -1,5 +1,9 @@
 function Links() {
-  return <h3>Links!</h3>;
+  return (
+    <div className="profile-links">
+      <text>Links!</text>;
+    </div>
+  );
 }
 
 export default Links;

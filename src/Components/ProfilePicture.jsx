@@ -1,5 +1,5 @@
 function ProfilePicture() {
-  return <h1>Hi There</h1>;
+  return <div className="profile-picture" />;
 }
 
 export default ProfilePicture;

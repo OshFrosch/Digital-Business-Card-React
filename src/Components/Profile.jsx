@@ -1,5 +1,10 @@
 function Profile() {
-  return <h2>Hi There</h2>;
+  return (
+    <div className="profile-back">
+      <button>LinkedIn</button>
+      <button>Download Contact</button>
+    </div>
+  );
 }
 
 export default Profile;
