@@ -4,10 +4,12 @@ import Links from "./Links";
 
 function BusinessCard() {
   return (
-    <div className="business-card">
-      <ProfilePicture />
-      <Profile />
-      <Links />
+    <div className="full-back">
+      <div className="business-card">
+        <ProfilePicture />
+        <Profile />
+        <Links />
+      </div>
     </div>
   );
 }

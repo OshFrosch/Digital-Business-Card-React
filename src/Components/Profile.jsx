@@ -1,8 +1,8 @@
 function Profile() {
   return (
     <div className="profile-back">
-      <button>LinkedIn</button>
-      <button>Download Contact</button>
+      <h1 className="profile-name">Joshua Kraft</h1>
+      <h3>Machine Learning Engineer</h3>
     </div>
   );
 }
