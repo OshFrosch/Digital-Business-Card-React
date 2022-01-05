@@ -1,7 +1,7 @@
 function Links() {
   return (
     <div className="profile-links">
-      <text>--------</text>;
+      <text></text>;
     </div>
   );
 }

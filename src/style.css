@@ -29,18 +29,17 @@ code {
 }
 
 .profile-picture {
-  padding-top: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(101, 104, 114, 0)),
-    url(https://images.unsplash.com/photo-1563805042-7684c019e1cb);
+    url(./images/profile_picture.jpeg);
   background-size: cover;
   background-position: center;
   border-radius: 15px 15px 0px 0px;
+  aspect-ratio: 1/1;
 }
 
 .profile-back {
-  background: #506175;
+  background: #222c38;
   overflow: hidden;
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -50,12 +49,52 @@ code {
   color: azure;
   text-align: center;
   font-size: 10vw;
+  margin-top: 15px;
+  margin-bottom: 0;
   /* understand rem/em/etc. or use @media
   What exactly is the viewport*/
 }
 
+.profile-title {
+  color: #3581d8;
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 5px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px 20px 0px 20px;
+  aspect-ratio: 7/1;
+}
+
+.btn {
+  width: 100%;
+  flex-grow: 1;
+  margin: 0px 10px 0px 10px;
+}
+
+.linkedin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background: #5093e2;
+}
+
+.profile-description {
+  margin: 10px 20px 10px 20px;
+}
+
+.profile-description > * {
+  color: #adc8e6;
+}
+
 .profile-links {
-  background: #506175;
+  background: #222c38;
   height: 100px;
   border-radius: 0px 0px 15px 15px;
 }
