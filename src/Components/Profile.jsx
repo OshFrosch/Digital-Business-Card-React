@@ -5,7 +5,8 @@ function Profile() {
       <h3 className="profile-title">Machine Learning Engineer</h3>
       <div className="action-buttons">
         <button className="btn linkedin">
-          <img src="../images/logo.png" /> LinkedIn
+          {/* <img src="../images/logo.png" /> */}
+          LinkedIn
         </button>
         <button className="btn">Save Contact</button>
       </div>

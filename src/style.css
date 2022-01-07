@@ -66,7 +66,9 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 10px 20px 0px 20px;
+  /* Here I use % margins and aspect-ratio
+  to keep the buttons sizing consistent*/
+  margin: 1% 4% 0 4%;
   aspect-ratio: 7/1;
 }
 
@@ -76,14 +78,70 @@ code {
   margin: 0px 10px 0px 10px;
 }
 
+/* Button Design */
+/* 
+- button click effect
+- button hover animation
+- modular with colors
+*/
+
 .linkedin {
+  position: relative; /* This is that the ::before can reference the button with absolute*/
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  background: #5093e2;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: #5093e2;
+  border-style: solid;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1% 1% 1% 1%;
+
+  color: #ffffff;
+  transition: color 200ms; /* If we hover we want to change the color via an animation*/
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+
+  z-index: 1; /*This is for the text to lay over the ::before element*/
 }
+
+.linkedin::before {
+  /* The idea is to have an element to sit on top of the button
+   and change when the botton is hovered. This is possible since
+  ::before elements are directly tied to the object*/
+  content: "";
+  background-color: #5093e2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  /*For the Annimation Part*/
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 300ms;
+}
+
+.linkedin:hover::before {
+  /*What happens to the before element when the button is hovered,
+  since the ::before element is not an object itself.*/
+  transform: scaleY(0);
+}
+
+.linkedin:hover {
+  color: #5093e2;
+}
+
+.linkedin:active {
+  background-color: #153d6b;
+}
+
+/*******************/
 
 .profile-description {
   margin: 10px 20px 10px 20px;
