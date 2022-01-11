@@ -1,3 +1,8 @@
+:root {
+  --button-color: 49, 69, 158;
+  --button-font-color: 255, 255, 255;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -45,20 +50,22 @@ code {
   align-content: center;
 }
 
-.profile-name {
-  color: azure;
-  text-align: center;
-  font-size: 10vw;
-  margin-top: 15px;
-  margin-bottom: 0;
-  /* understand rem/em/etc. or use @media
-  What exactly is the viewport*/
+.profile-title {
+  font-size: clamp(2rem, 10vw, 3.8rem);
 }
 
-.profile-title {
+.profile-title > h1 {
+  color: azure;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.profile-title > h3 {
   color: #3581d8;
   text-align: center;
-  font-size: 4vw;
+  font-size: 0.335em;
   margin-top: 5px;
 }
 
@@ -73,48 +80,48 @@ code {
 }
 
 .btn {
-  width: 100%;
-  flex-grow: 1;
-  margin: 0px 10px 0px 10px;
-}
-
-/* Button Design */
-/* 
-- button click effect
-- button hover animation
-- modular with colors
-*/
-
-.linkedin {
   position: relative; /* This is that the ::before can reference the button with absolute*/
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  border-width: 5px;
-  border-radius: 10px;
-  border-color: #5093e2;
+  flex-grow: 1;
+  width: 100%;
+  margin: 0 3% 0 3%;
+  border-width: 0.25em;
+  border-radius: 0.5em;
   border-style: solid;
+  border-color: rgb(var(--button-color));
   background-color: transparent;
   cursor: pointer;
   padding: 1% 1% 1% 1%;
 
-  color: #ffffff;
-  transition: color 200ms; /* If we hover we want to change the color via an animation*/
   font-family: Arial;
-  font-size: 20px;
+  font-size: clamp(10px, 3vw, 19px);
   font-weight: bold;
+  color: rgb(var(--button-font-color));
+}
 
+.btn:active {
+  background-color: rgba(var(--button-color), 0.3);
+}
+
+.btn.animation {
+  transition: color 200ms; /* If we hover we want to change the color via an animation*/
   z-index: 1; /*This is for the text to lay over the ::before element*/
 }
 
-.linkedin::before {
+.btn.animation:hover {
+  color: rgb(var(--button-color));
+}
+
+.btn.animation::before {
   /* The idea is to have an element to sit on top of the button
    and change when the botton is hovered. This is possible since
   ::before elements are directly tied to the object*/
   content: "";
-  background-color: #5093e2;
+  background-color: rgb(var(--button-color));
   position: absolute;
   top: 0;
   bottom: 0;
@@ -127,32 +134,53 @@ code {
   transition: transform 300ms;
 }
 
-.linkedin:hover::before {
+.btn.animation:hover::before {
   /*What happens to the before element when the button is hovered,
   since the ::before element is not an object itself.*/
   transform: scaleY(0);
 }
 
-.linkedin:hover {
-  color: #5093e2;
+.linkedin {
+  --button-color: 80, 147, 226;
 }
 
-.linkedin:active {
-  background-color: #153d6b;
+.contact {
+  --button-color: 96, 103, 136;
 }
 
 /*******************/
 
 .profile-description {
-  margin: 10px 20px 10px 20px;
+  margin: 3% 7.5%;
 }
 
 .profile-description > * {
   color: #adc8e6;
 }
 
+.infos > li {
+  margin: 5px 0 5px 0;
+}
+
 .profile-links {
-  background: #222c38;
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #162536;
   border-radius: 0px 0px 15px 15px;
+}
+
+.social-links {
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin: 4% 2%;
+}
+
+.social-links:hover {
+  color: #576291;
+}
+
+.social-links:active {
+  color: #57629196;
 }
