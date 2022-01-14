@@ -10,20 +10,16 @@ function Profile() {
         <button className="btn animation contact">Save Contact</button>
       </div>
       <div className="profile-description">
-        <ul className="fa-ul infos">
-          <li>
-            <span class="fa-li">
-              <i class="fas fa-map-marker"></i>
-            </span>
-            Heidelberg, Germany
-          </li>
-          <li>
-            <span class="fa-li">
-              <i class="fas fa-envelope"></i>
-            </span>
+        <div className="info">
+          <span>
+            <i class="info-icon fas fa-map-marker"></i>
+            Heidelberg
+          </span>
+          <span>
+            <i class="info-icon fas fa-envelope"></i>
             nathan.joshua.kraft@gmx.de
-          </li>
-        </ul>
+          </span>
+        </div>
 
         <h3>About</h3>
         <p>
