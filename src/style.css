@@ -89,7 +89,7 @@ code {
   border-radius: 0.5em;
   border-style: solid;
   border-color: rgb(var(--button-color));
-  background-color: transparent;
+  background-color: rgb(var(--button-color));
   cursor: pointer;
   padding: 1% 1% 1% 1%;
 
@@ -100,40 +100,57 @@ code {
 }
 
 .btn:active {
-  background-color: rgba(var(--button-color), 0.3);
+  border-color: transparent;
+  background-color: rgba(var(--button-color), 0.4);
+  color: rgb(var(--button-font-color), 0.8);
 }
 
-.btn.animation {
-  transition: color 200ms; /* If we hover we want to change the color via an animation*/
-  z-index: 1; /*This is for the text to lay over the ::before element*/
+.button-icon {
+  margin-right: 0.5em;
 }
 
-.btn.animation:hover {
-  color: rgb(var(--button-color));
-}
+@media (hover: hover) and (pointer: fine) {
+  .btn.animation {
+    background-color: transparent;
+    transition: color 200ms; /* If we hover we want to change the color via an animation*/
+    z-index: 1; /*This is for the text to lay over the ::before element*/
+  }
 
-.btn.animation::before {
-  /* The idea is to have an element to sit on top of the button
+  .btn.animation:active {
+    border-color: rgb(var(--button-color));
+    background-color: rgba(var(--button-color), 0.4);
+    color: rgb(var(--button-font-color), 0.8);
+  }
+
+  .btn.animation:hover,
+  .btn.animation:focus {
+    color: rgb(var(--button-color));
+  }
+
+  .btn.animation::before {
+    /* The idea is to have an element to sit on top of the button
    and change when the botton is hovered. This is possible since
   ::before elements are directly tied to the object*/
-  content: "";
-  background-color: rgb(var(--button-color));
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  /*For the Annimation Part*/
-  transform: scaleY(1);
-  transform-origin: top;
-  transition: transform 300ms;
-}
+    content: "";
+    background-color: rgb(var(--button-color));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    /*For the Annimation Part*/
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 300ms;
+  }
 
-.btn.animation:hover::before {
-  /*What happens to the before element when the button is hovered,
+  .btn.animation:hover::before,
+  .btn.animation:focus::before {
+    /*What happens to the before element when the button is hovered,
   since the ::before element is not an object itself.*/
-  transform: scaleY(0);
+    transform: scaleY(0);
+  }
 }
 
 .linkedin {
@@ -148,13 +165,14 @@ code {
 
 .info {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+
   margin: 4% 0%;
   font-size: clamp(6.5px, 3vw, 18px);
 }
 
 .info-icon {
-  margin: 0em 0.5em 0em 1em;
+  margin: 0em 0.5em;
 }
 
 .profile-description {

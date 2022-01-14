@@ -1,4 +1,8 @@
 function Profile() {
+  const openlink = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
     <div className="profile-back">
       <div className="profile-title">
@@ -6,8 +10,24 @@ function Profile() {
         <h3>Machine Learning Engineer</h3>
       </div>
       <div className="action-buttons">
-        <button className="btn animation linkedin">LinkedIn</button>
-        <button className="btn animation contact">Save Contact</button>
+        <button
+          className="btn animation linkedin"
+          onClick={() => {
+            openlink("https://www.linkedin.com/in/nathan-joshua-kraft/");
+          }}
+        >
+          <i class="button-icon fab fa-linkedin"></i>LinkedIn
+        </button>
+        <button
+          className="btn animation contact"
+          onClick={() => {
+            openlink(
+              "https://heibox.uni-heidelberg.de/f/cf50f062fd954ff6b951/?dl=1"
+            );
+          }}
+        >
+          <i class="button-icon fas fa-address-book"></i>Save Contact
+        </button>
       </div>
       <div className="profile-description">
         <div className="info">
