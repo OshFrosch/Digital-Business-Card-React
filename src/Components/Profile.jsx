@@ -1,3 +1,5 @@
+import contact_vcf from "../resources/JoshuaKraft.vcf";
+
 function Profile() {
   const openlink = (link) => {
     window.open(link, "_blank");
@@ -18,16 +20,15 @@ function Profile() {
         >
           <i class="button-icon fab fa-linkedin"></i>LinkedIn
         </button>
-        <button
-          className="btn animation contact"
-          onClick={() => {
-            openlink(
-              "https://heibox.uni-heidelberg.de/f/cf50f062fd954ff6b951/?dl=1"
-            );
-          }}
+        <a
+          className="direct-download"
+          href={contact_vcf}
+          download="Kontaktkarte"
         >
-          <i class="button-icon fas fa-address-book"></i>Save Contact
-        </button>
+          <button className="btn animation contact">
+            <i class="button-icon fas fa-address-book"></i>Save Contact
+          </button>
+        </a>
       </div>
       <div className="profile-description">
         <div className="info">
@@ -43,15 +44,15 @@ function Profile() {
 
         <h3>About</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam.
+          I am currently studying Data and Computer Science at the University of
+          Heidelberg. And I am passionate about product development and design.
+          Therefore I am currently working on a project called "Lagooon" which
+          helps you organize your second brain.
         </p>
-        <h3>Intrests</h3>
+        <h3>Interests</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam.
+          Sport, Nature, Technology, Machine Learning, Cloud Computing, and
+          Adventures
         </p>
       </div>
     </div>
